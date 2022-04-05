@@ -43,5 +43,3 @@ priceRangeElem.addEventListener('change', function(evt){
 });
 
 filterData();
-
-heroku 
