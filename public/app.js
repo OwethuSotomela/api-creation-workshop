@@ -10,12 +10,6 @@ const showPriceRangeElem = document.querySelector('.showPriceRange');
 const garmentsTemplateText = document.querySelector('.garmentListTemplate');
 const garmentsTemplate = Handlebars.compile(garmentsTemplateText.innerHTML);
 
-// axios
-//   .get("http://localhost:4017/api/garments")
-//   .then(function myGarments(garments) {
-// 	  console.log(garments);
-//   });
-
 seasonOptions.addEventListener('click', function(evt){
 	seasonFilter = evt.target.value;
 	filterData();

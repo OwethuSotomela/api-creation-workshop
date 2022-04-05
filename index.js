@@ -26,6 +26,20 @@ app.get("/api/garments", function (req, res) {
   });
 });
 
+app.get('/api/garments/price/:price', function(req, res){
+  const maxPrice = Number(req.params.price);
+  const filteredGarments = garments.filter( garment => {
+      if (maxPrice > 0) {
+          return garment.price <= maxPrice;
+      }
+      return true;
+  });
+
+  res.json({ 
+      garments : filteredGarments
+  });
+});
+
 const PORT = process.env.PORT || 4017;
 app.listen(PORT, function () {
   console.log(`App started at port: ${PORT}`);
