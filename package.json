@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/OwethuSotomela/api-creation-workshop/issues"
   },
-  "homepage": "https://github.com/OwethuSotomela/api-creation-workshop#readme"
+  "homepage": "https://github.com/OwethuSotomela/api-creation-workshop#readme",
+
+  "engines": {
+    "node": "16.13.x"
+  }
+  
+
 }
