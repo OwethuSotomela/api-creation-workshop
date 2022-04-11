@@ -1,6 +1,6 @@
 body {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	background-color: lightgoldenrodyellow;
+	background-color: #C2EDCE;
 }
 
 .container {
@@ -24,8 +24,8 @@ img {
 
 .garment {
 	flex : 1;
-	background-color: beige;
-	border: 1px solid greenyellow;
+	background-color: #F6F6F2;
+	border: 2px solid #388087;
 	padding: 1em;
 	margin: 0.25em;
 	border-radius: 0.5em;
@@ -48,7 +48,14 @@ img {
 .message {
 	margin-top: 1em;
 	padding: 1em;
-	background-color: lightsalmon;
+	background-color: #6FB3B8;
+}
+
+.addGarmentBtn{
+  background-color: #BADFE7;
+}
+.hideAddGarmetBtn{
+  background-color: #BADFE7;
 }
 
 #snackbar {
