@@ -51,11 +51,44 @@ img {
 	background-color: #6FB3B8;
 }
 
+a:link,
+a:visited {
+  background-color: #17252A;
+  color: white;
+  padding: 9px 15px;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5vh;
+}
+
+a:hover,
+a:active {
+  background-color: #17252A;
+}
+
 .addGarmentBtn{
-  background-color: #BADFE7;
+  /* background-color: #BADFE7; */
+  background-color: #17252A;
+  color: white;
+  padding: 9px 15px;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5vh;
 }
 .hideAddGarmetBtn{
-  background-color: #BADFE7;
+  /* background-color: #BADFE7; */
+  background-color: #17252A;
+  color: white;
+  padding: 9px 15px;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5vh;
 }
 
 #snackbar {
