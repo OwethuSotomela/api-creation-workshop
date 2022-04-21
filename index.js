@@ -74,54 +74,23 @@ app.get("/api", (req, res) => {
   })
 })
 
-// app.post("/api/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
 
-//   var { username } = req.body;
-//   console.log(username)
-//   var userExists = false;
+  var user = [
+    {
+      id: 1,
+      username: "OwethuSotomela",
+      email: "owethusotomela@gmail.com"
+    }
+  ];
 
-//   await axios
-//     .get(``)
-//     .then(function (result) {
-//       let data = result.data;
-//       for (let i = 0; i < data.length; i++) {
-//         if (data[i].username.toLowerCase() == username.toLowerCase()) {
-//           userExists = true;
-//           break;
-//         }
-//       }
-//     });
+  jwt.sign({ user: user }, 'secretkey', (err, key) => {
+    res.json({
+      key: key
+    })
+  })
 
-//   if (userExists) {
-//     jwt.sign({ username }, "secretkey", { expiresIn: '5m' }, (err, key) => {
-//       res.json({
-//         key,
-//       });
-//     });
-//   } else {
-//     res.sendStatus(403);
-//   }
-// });
-
-var headers = {
-  email: "owethusotomela@gmail.com",
-  password: "password"
-};
-
-let axiosConfig = {
-  headers: {
-      'Content-Type': 'application/json;charset=UTF-8',
-      "Access-Control-Allow-Origin": "*",
-  }
-};
-
-axios.post('http://<host>:<port>/<path>', headers, axiosConfig)
-.then((res) => {
-  console.log("RESPONSE RECEIVED: ", res);
-})
-.catch((err) => {
-  console.log("AXIOS ERROR: ", err);
-})
+});
 
 app.get("/api/posts", verifyToken, (req, res) => {
   jwt.verify(req.key, "secretkey", (err, authData) => {
