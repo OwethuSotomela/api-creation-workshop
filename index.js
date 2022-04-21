@@ -84,9 +84,9 @@ app.post("/api/login", async (req, res) => {
     }
   ];
 
-  jwt.sign({ user: user }, 'secretkey', (err, key) => {
+  jwt.sign({ user }, 'secretkey', { expiresIn: '24h' }, (err, token) => {
     res.json({
-      key: key
+      token
     })
   })
 
