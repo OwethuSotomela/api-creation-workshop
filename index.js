@@ -2,6 +2,8 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
+const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
@@ -80,7 +82,6 @@ app.post("/api/login", async (req, res) => {
     {
       id: 1,
       username: "OwethuSotomela",
-      email: "owethusotomela@gmail.com"
     }
   ];
 
@@ -116,6 +117,8 @@ function verifyToken(req, res, next) {
     res.sendStatus(403);
   }
 }
+
+// end here
 
 console.log("Hi Oz!")
 

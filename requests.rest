@@ -3,7 +3,7 @@ GET http://localhost:4017/api
 ###
 
 GET http://localhost:4017/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZCI6MSwidXNlcm5hbWUiOiJPd2V0aHVTb3RvbWVsYSIsImVtYWlsIjoib3dldGh1c290b21lbGFAZ21haWwuY29tIn1dLCJpYXQiOjE2NTA1MjU5MzV9.H7V7H1jjeaNVcpGPh1zB0l58PKYgRh7CN2Cw0tBnf-k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJpZCI6MSwidXNlcm5hbWUiOiJPd2V0aHVTb3RvbWVsYSJ9XSwiaWF0IjoxNjUwNTMzOTIyLCJleHAiOjE2NTA2MjAzMjJ9.kgcpxzQNec2KeI9G-KemB2t5V1s27gJfjemFa1HKCWk
 
 ###
 

@@ -1,3 +1,5 @@
+// const { default: axios } = require("axios");
+
 let seasonFilter = 'All';
 let genderFilter = 'All';
 
@@ -6,6 +8,11 @@ const genderOptions = document.querySelector('.genders');
 const searchResultsElem = document.querySelector('.searchResults');
 const priceRangeElem = document.querySelector('.priceRange');
 const showPriceRangeElem = document.querySelector('.showPriceRange');
+
+// Start here
+const username = document.querySelector('.username');
+const loginBtn = document.querySelector('.loginBtn');
+// I am here
 
 const garmentsTemplateText = document.querySelector('.garmentListTemplate');
 const garmentsTemplate = Handlebars.compile(garmentsTemplateText.innerHTML);
@@ -19,12 +26,6 @@ genderOptions.addEventListener('click', function (evt) {
 	genderFilter = evt.target.value;
 	filterData();
 });
-
-// function myFunction() {
-// 	var x = document.getElementById("snackbar");
-// 	x.className = "show";
-// 	setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-// }
 
 function filterData() {
 	axios
@@ -49,3 +50,17 @@ priceRangeElem.addEventListener('change', function (evt) {
 });
 
 filterData();
+
+// start here 
+
+function myLogin() {
+
+	alert("Hi, I am working!");
+
+}
+
+
+loginBtn.addEventListener('click', myLogin)
+
+// end here 
+
