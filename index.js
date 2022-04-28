@@ -10,9 +10,9 @@ const app = express();
 const garments = require("./garments.json");
 
 app.use(express.static("public"));
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 app.post("/api/garments", (req, res) => {
   const { description, img, gender, season, price } = req.body;
@@ -77,6 +77,10 @@ app.get("/api", (req, res) => {
 })
 
 app.post("/api/login", async (req, res) => {
+
+  // started here  
+  const {username} = req.body;
+  console.log(username)
 
   var user = [
     {
