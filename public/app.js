@@ -1,3 +1,5 @@
+// const { default: axios } = require("axios");
+
 let seasonFilter = 'All';
 let genderFilter = 'All';
 
@@ -8,6 +10,10 @@ const priceRangeElem = document.querySelector('.priceRange');
 const showPriceRangeElem = document.querySelector('.showPriceRange');
 
 // My app starts 
+const loginBtn = document.querySelector('.loginBtn');
+const getTokenBtn = document.querySelector('.getToken');
+const displayToken = document.querySelector('.displayToken');
+const loginError = document.querySelector('.loginError');
 const missyTeeApp = document.querySelector('.missyTeeApp');
 // my app ends 
 
@@ -54,17 +60,18 @@ function myLogin() {
 
 	const username = document.querySelector('.username').value;
 
+	if (username && username === 'OwethuSotomela') {
+		showApp()
+	} else {
+		loginError.innerHTML = "You do not have permission to login!!!";
+	}
+
 	axios
 		.post('/api/login', { username })
 		.then((result) => {
 			console.log(result.data);
 		})
 
-	if (username && username === 'OwethuSotomela') {
-		showApp()
-	} else {
-		console.log("We don't do that here..!!");
-	}
 }
 
 function showApp() {
@@ -76,7 +83,20 @@ function showApp() {
 	}
 }
 
+function getToken() {
+
+	const token = localStorage.getItem('token');
+
+	axios
+		.post(`/api/login', ${ token }`)
+		.then((result) => {
+			displayToken.innerHTML = result.data;
+			console.log(result.data);
+		})
+}
+
 loginBtn.addEventListener('click', myLogin)
+getTokenBtn.addEventListener('click', getToken)
 
 // end here 
 

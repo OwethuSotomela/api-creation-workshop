@@ -116,8 +116,6 @@ function verifyToken(req, res, next) {
 
 // end here
 
-console.log("Hi Oz!")
-
 const PORT = process.env.PORT || 4017;
 app.listen(PORT, function () {
   console.log(`App started on port ${PORT}`);
