@@ -93,9 +93,13 @@ function getToken() {
 		.post('/api/login', { username })
 		.then((result) => {
 			var { token } = result.data;
+			displayToken.innerHTML = token;
+
 			console.log(token);
-			token = localStorage.getItem(token);
-			displayToken.innerHTML = JSON.stringify(token);
+
+			// token = localStorage.getItem('token');
+			// console.log(token)
+
 		})
 }
 
