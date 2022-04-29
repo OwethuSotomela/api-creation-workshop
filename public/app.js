@@ -1,5 +1,3 @@
-// const { default: axios } = require("axios");
-
 let seasonFilter = 'All';
 let genderFilter = 'All';
 
@@ -93,16 +91,19 @@ function getToken() {
 		.post('/api/login', { username })
 		.then((result) => {
 			var { token } = result.data;
-			displayToken.innerHTML = token;
-
+			parseJwt()
+			displayToken.innerHTML = JSON.stringify(parseJwt(token));
 			console.log(token);
-
-			// token = localStorage.getItem('token');
-			// console.log(token)
-
 		})
 }
 
+const parseJwt = (token) => {
+	try {
+	  return JSON.parse(atob(token.split('.')[1]));
+	} catch (e) {
+	  return null;
+	}
+  };
 loginBtn.addEventListener('click', myLogin)
 getTokenBtn.addEventListener('click', getToken)
 
