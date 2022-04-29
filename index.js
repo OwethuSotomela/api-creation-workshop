@@ -95,7 +95,6 @@ app.get("/api/posts", verifyToken, (req, res) => {
       res.sendStatus(403);
     } else {
       res.json({
-        post: "Post created...",
         authData,
       });
     }

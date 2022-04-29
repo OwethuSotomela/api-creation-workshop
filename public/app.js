@@ -69,7 +69,9 @@ function myLogin() {
 	axios
 		.post('/api/login', { username })
 		.then((result) => {
-			console.log(result.data);
+			const {token} = result.data;
+			console.log(token);
+			localStorage.setItem('Token', token);
 		})
 
 }
@@ -87,12 +89,13 @@ function getToken() {
 
 	const token = localStorage.getItem('token');
 
+	const username = document.querySelector('.username').value;
+
 	axios
-		.post(`/api/login', ${ token }`)
-		.then((result) => {
-			displayToken.innerHTML = result.data;
-			console.log(result.data);
-		})
+	.post('/api/login', { username })
+	.then((result) => {
+		console.log(result.data);
+	})
 }
 
 loginBtn.addEventListener('click', myLogin)
