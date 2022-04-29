@@ -70,21 +70,13 @@ app.get("/api/garments/price/:price", function (req, res) {
 
 // Start here 
 
-app.get("/api", (req, res) => {
-  res.json({
-    message: "Welcome to the API..!"
-  })
-})
+app.post("/api/login", async (req, res, next) => {
 
-app.post("/api/login", async (req, res) => {
-
-  // started here  
-  const {username} = req.body;
+  const { username } = req.body;
   console.log(username)
 
   var user = [
     {
-      id: 1,
       username: "OwethuSotomela",
     }
   ];

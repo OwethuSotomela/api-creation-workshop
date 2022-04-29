@@ -7,6 +7,10 @@ const searchResultsElem = document.querySelector('.searchResults');
 const priceRangeElem = document.querySelector('.priceRange');
 const showPriceRangeElem = document.querySelector('.showPriceRange');
 
+// My app starts 
+const missyTeeApp = document.querySelector('.missyTeeApp');
+// my app ends 
+
 const garmentsTemplateText = document.querySelector('.garmentListTemplate');
 const garmentsTemplate = Handlebars.compile(garmentsTemplateText.innerHTML);
 
@@ -53,11 +57,24 @@ function myLogin() {
 	axios
 		.post('/api/login', { username })
 		.then((result) => {
-				console.log(result.data);
-			})
+			console.log(result.data);
+		})
 
+	if (username && username === 'OwethuSotomela') {
+		showApp()
+	} else {
+		console.log("We don't do that here..!!");
+	}
 }
 
+function showApp() {
+	var missyTeeApp = document.querySelector(".missyTeeApp");
+	if (missyTeeApp.style.display === "none") {
+		missyTeeApp.style.display = "block";
+	} else {
+		missyTeeApp.style.display = "none";
+	}
+}
 
 loginBtn.addEventListener('click', myLogin)
 
